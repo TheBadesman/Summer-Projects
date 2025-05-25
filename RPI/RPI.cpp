@@ -58,8 +58,7 @@ int main()
         cout << "Strength of their schedule: "; getline(cin, convertor); percent.strength = stof(convertor) / 100;
         cout << "Strength of their opponents schedule: "; getline(cin, convertor); percent.opponents = stof(convertor) / 100;
 
-        //Printing a buffer to help with readability
-        cout << "-------------------------";
+        cout << "-------------------------"; //Printing a buffer to help with readability
 
         if (percent.winWeight + percent.strength + percent.opponents == 1) { break; }
         
@@ -80,8 +79,7 @@ int main()
         cout << "Enter the number of wins: "; getline(cin, convertor);  holder.wins = stoi(convertor);
         cout << "Enter the number of losses: "; getline(cin, convertor);  holder.loses = stoi(convertor);
 
-        //Printing a buffer to help with readability
-        cout << "\n-------------------------\n";
+        cout << "\n-------------------------\n"; //Printing a buffer to help with readability
 
         //calculating the win/loss percentage and total games of the team
         holder.totalGames();
@@ -102,8 +100,7 @@ int main()
             }
         }
         
-        //calculating the Schedule strength and adding it to the Struct stored in the vector
-        league[i].schStr = str / league.size();
+        league[i].schStr = str / league.size(); //calculating the Schedule strength and adding it to the Struct stored in the vector
     }
 
     for (size_t i = 0; i < league.size(); i++)
@@ -118,10 +115,10 @@ int main()
             }
         }
         
-        //calculating the Schedule strength and adding it to the Struct stored in the vector
-        league[i].oppStr = str / league.size();
+        league[i].oppStr = str / league.size(); //calculating the Schedule strength and adding it to the Struct stored in the vector
     }
 
+    //Printing the RPI for every team in the Vector League
     for (size_t i = 0; i < league.size(); i++)
     {
         cout << '\n' << league[i].name << "'s Win/Loss is " << league[i].record << "\nTheir Schedule Strength was " << league[i].schStr;
@@ -129,7 +126,6 @@ int main()
         cout << league[i].record * percent.winWeight + league[i].schStr * percent.strength + league[i].oppStr * percent.opponents;
         cout << "\n-------------------------\n";
     }
-    
-    
+
     return 0;
 }
