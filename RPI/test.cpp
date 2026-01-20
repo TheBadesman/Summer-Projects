@@ -20,14 +20,15 @@ int main(){
     vector<teams> league;
     weight percent;
 
-    //creating a team for testing proper inputs
+    //creating a team for testing proper calcuations of total games and win loss
     teams tester; tester.name = "A"; tester.wins = 22; tester.loses = 3; tester.totalGames(); tester.winLoss(); 
     test_(tester.games == 25);
     test_(tester.record == 0.88f);
     league.push_back(tester);
 
-    //creating a team for testing improper inputs
-    tester; tester.name = "b"; tester.wins = 24; tester.loses = 4; tester.totalGames(); tester.winLoss();
+    //testing setPercent
+    setPercent(percent);
+    
 
     report_();
 }

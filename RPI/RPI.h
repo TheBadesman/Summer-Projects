@@ -56,11 +56,23 @@ void setPercent(weight& percent){ //Function to set the percentage of each categ
             }
             catch(const exception& e)
             {
-                cout << "Sorry, invalid input, please try again";
+                cout<< "Sorry, invalid input, please try again";
             }
-             
+            break;    
         }
-        cout << "Strength of their schedule: "; getline(cin, convertor); percent.strength = stof(convertor) / 100;
+        
+        cout << "Strength of their schedule: "; while (true){
+            getline(cin, convertor); try
+            {
+                percent.winWeight = stof(convertor) / 100;
+            }
+            catch(const exception& e)
+            {
+                cout<< "Sorry, invalid input, please try again";
+            }
+            break;    
+        }
+
         cout << "Strength of their opponents schedule: "; getline(cin, convertor); percent.opponents = stof(convertor) / 100;
 
         cout << "-------------------------\n"; //Printing a buffer to help with readability
